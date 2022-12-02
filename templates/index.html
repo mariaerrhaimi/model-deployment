@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1> Prediction of tiktok subscribers</h1>
+     <h4>for the hastag its has to be in the theme of worldcup for the playcount it has to be in the 10 million and for the likes it has to be in the millions </h4>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="gas_type" placeholder="hashtag" required="required" />
+        <input type="text" name="water_content" placeholder="play count" required="required" />
+        <input type="text" name="viscosity" placeholder="previous videos" required="required" />
+        <input type="text" name="time" placeholder="likes" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict SUB</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+     {{ prediction_text2 }}
+
+ </div>
+
+
+</body>
+</html>
